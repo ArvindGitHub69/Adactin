@@ -33,3 +33,4 @@ Feature: Automate adactin Hotel page
     Then user will give the CrediCard exp year
     Then user will give the CrediCard CVV
     Then user will click book now
+    Then the order id will print in the console

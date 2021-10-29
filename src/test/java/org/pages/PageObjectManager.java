@@ -10,12 +10,18 @@ public class PageObjectManager {
 	private SelectHotelType se;
 	private BookAHotel b;
 
-	public PageObjectManager(WebDriver d) {
-		this.d = d;
+	
+
+	public PageObjectManager() {
+		super();
 	}
 
 	public HomePage getHomePage() {
-		return (a == null) ? a = new HomePage() : a;
+		if(a==null) {
+			a = new HomePage();
+		}
+		return a;
+//		return (a == null) ? a = new HomePage() : a;
 
 	}
 

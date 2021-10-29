@@ -3,6 +3,7 @@ package org.stepdefinition;
 import java.awt.AWTException;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.pages.BaseClass;
 import org.pages.PageObjectManager;
 import io.cucumber.java.en.Given;
@@ -11,8 +12,8 @@ import io.cucumber.java.ta.அப்பொழுது;
 import io.cucumber.java.en.Then;
 
 public class Stepdefinition extends BaseClass {
-	static WebDriver d;
-	static PageObjectManager POM = new PageObjectManager(d);
+
+	static PageObjectManager POM = new PageObjectManager();
 
 	@அப்பொழுது("Launch the Browser")
 	public void launch_the_browser() {
@@ -154,4 +155,13 @@ public class Stepdefinition extends BaseClass {
 		Click(POM.getSelectHotelType().getContinue());
 	}
 
+	// Print the order ID in console(try using POM implementation),(create POJO for
+	// print order and add it in PageObjectManager and call below)
+	@Then("the order id will print in the console")
+	public void the_order_id_will_print_in_the_console() {
+		WebElement OrderID = locators("name", "order_no");
+		String getatt = getatt(OrderID, "value");
+		System.out.println(getatt);
+
+	}
 }
